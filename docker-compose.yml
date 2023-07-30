@@ -1,0 +1,9 @@
+version: "3"
+services:
+  jaicat:
+    container_name: jaidotcat
+    restart: unless-stopped
+    build: .
+networks:
+  nginx:
+    external: true
