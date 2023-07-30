@@ -4,6 +4,8 @@ services:
     container_name: jaidotcat
     restart: unless-stopped
     build: .
+    networks:
+      - nginx
 networks:
   nginx:
     external: true
