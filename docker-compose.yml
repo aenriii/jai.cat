@@ -6,6 +6,12 @@ services:
     build: .
     networks:
       - nginx
+    healthcheck:
+          test: curl --fail localhost:8080 || exit 1
+          interval: 1s
+          timeout: 10s
+          retries: 5
+          start_period: 30s
 networks:
   nginx:
     external: true
